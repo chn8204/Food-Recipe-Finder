@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff8f1">
+  <meta name="description" content="Find recipes from around the world with ingredients and cooking instructions.">
+  <title>Food Recipe Finder</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Food Recipe Finder home">
+      <span class="brand-icon" aria-hidden="true">F</span>
+      <span>Food<span class="brand-accent">Finder</span></span>
+    </a>
+    <p class="header-note">Good food starts with a little inspiration.</p>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">YOUR NEXT FAVORITE MEAL</p>
+      <h1 id="page-title">Find something <span>delicious.</span></h1>
+      <p class="hero-copy">Search recipes from around the world and find out exactly how to make them.</p>
+
+      <form class="search-form" id="searchForm" role="search">
+        <label class="sr-only" for="foodInput">Search for a recipe</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input
+          type="search"
+          id="foodInput"
+          name="query"
+          placeholder="Try “chicken”, “pasta” or “sushi”"
+          autocomplete="off"
+          required
+        >
+        <button id="searchButton" type="submit">Find recipes <span aria-hidden="true">→</span></button>
+      </form>
+
+      <div class="suggestions" aria-label="Popular searches">
+        <span>Popular:</span>
+        <button type="button" class="suggestion" data-query="chicken">Chicken</button>
+        <button type="button" class="suggestion" data-query="pasta">Pasta</button>
+        <button type="button" class="suggestion" data-query="salmon">Salmon</button>
+        <button type="button" class="suggestion" data-query="vegetarian">Vegetarian</button>
+      </div>
+    </section>
+
+    <section class="results-section" aria-labelledby="resultsHeading">
+      <div class="results-heading">
+        <div>
+          <p class="eyebrow">A WORLD OF FLAVOR</p>
+          <h2 id="resultsHeading">Recipe ideas</h2>
+        </div>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite">Search for a dish to get started.</p>
+      <div id="result" class="recipe-grid" aria-busy="false"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made for curious cooks <span aria-hidden="true">·</span> Recipes provided by <a href="https://www.themealdb.com/" target="_blank" rel="noopener noreferrer">TheMealDB</a></p>
+  </footer>
+</body>
+</html>
